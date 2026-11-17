@@ -38,7 +38,7 @@ def draw_tile(canvas, x1, y1, x2, y2, value, outline="#737D89", width=1):
     tile_h = y2 - y1
 
     if value == 3:
-        # Tanjakan: bidang biru dengan chevron putih.
+        # Tanjakan
         canvas.create_polygon(
             x1 + 1, y2 - tile_h * 0.28,
             x2 - 1, y2 - tile_h * 0.48,
@@ -67,7 +67,7 @@ def draw_tile(canvas, x1, y1, x2, y2, value, outline="#737D89", width=1):
             )
 
     elif value == -1:
-        # Tembok: pola bata dengan garis nat.
+        # Tembok
         mortar = "#65717D"
         brick_w = tile_w / 2
         brick_h = tile_h / 4
@@ -302,9 +302,7 @@ class GridConfigurator:
         self.root.bind_all("<Control-KP_Add>", lambda event: self.zoom_in())
         self.root.bind_all("<Control-KP_Subtract>", lambda event: self.zoom_out())
 
-        # =====================================
-        # BARIS 1: ALAT EDIT
-        # =====================================
+        
 
         self.control_frame = tk.Frame(
             self.content_frame,
@@ -416,9 +414,6 @@ class GridConfigurator:
             textvariable=self.wall_ratio_var
         ).pack(side=tk.LEFT, padx=2)
 
-        # =====================================
-        # BARIS 2: PILIHAN ALGORITMA
-        # =====================================
 
         self.algo_frame = tk.Frame(
             self.content_frame,
@@ -458,10 +453,6 @@ class GridConfigurator:
 
             cb.pack(side=tk.LEFT, padx=8)
 
-        # =====================================
-        # BARIS 3: BATERAI
-        # =====================================
-
         self.battery_frame = tk.Frame(
             self.content_frame,
             relief=tk.GROOVE,
@@ -492,9 +483,7 @@ class GridConfigurator:
             justify="center"
         ).pack(side=tk.LEFT, padx=5)
 
-        # =====================================
-        # GRID
-        # =====================================
+       
 
         self.map_frame = tk.Frame(
             self.content_frame,
@@ -537,9 +526,6 @@ class GridConfigurator:
             anchor="n"
         )
 
-        # =====================================
-        # TOMBOL START SIMULASI
-        # =====================================
 
         self.btn_done = tk.Button(
             self.content_frame,
@@ -559,9 +545,6 @@ class GridConfigurator:
             pady=15
         )
 
-        # =====================================
-        # UKURAN WINDOW
-        # =====================================
 
         self._setup_window_size()
         self.draw_grid()

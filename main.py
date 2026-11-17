@@ -57,12 +57,11 @@ def run_experiment(grid, start, goal, selected_algorithms, battery):
 
 
 def main():
-    initial = None  # None = peta baru; (grid, start, goal, battery) = pakai peta sebelumnya
+    initial = None  
 
     while True:
         grid, start, goal, selected_algorithms, battery = get_env(initial)
 
-        # User menutup jendela konfigurator (tombol X) tanpa klik Start -> selesai
         if not selected_algorithms:
             break
 
